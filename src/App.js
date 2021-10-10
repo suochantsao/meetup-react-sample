@@ -1,12 +1,17 @@
 import { Route, Switch } from "react-router-dom";
 
+// Pages
 import AllMeetupsPage from "./pages/AllMeetups";
 import NewMeetupPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
 
+// Components
+import MainNavigation from "./components/layout/MainNavigation";
+
 function App() {
   return (
     <div>
+      <MainNavigation />
       <Switch>
         <Route path="/" exact>
           <AllMeetupsPage />
