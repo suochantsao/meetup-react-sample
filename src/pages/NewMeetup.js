@@ -1,7 +1,12 @@
+// React Router
+import { useHistory } from "react-router-dom";
+
 // Components
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 function NewMeetupPage() {
+  const history = useHistory();
+
   function addMeetupHandler(meetupData) {
     fetch(
       "https://react-meetup-example-7f0c9-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json",
@@ -12,7 +17,9 @@ function NewMeetupPage() {
           "Content-Type": "application/json",
         },
       }
-    );
+    ).then(() => {
+      history.replace("/");
+    });
   }
 
   return (
